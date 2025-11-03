@@ -12,6 +12,12 @@ from datetime import datetime
 
 def calculate_file_hash(filepath, algorithm='sha256'):
     """Calcula el hash de un archivo"""
+    # Validar algoritmo contra una lista permitida
+    allowed_algorithms = ['md5', 'sha1', 'sha256', 'sha512']
+    if algorithm.lower() not in allowed_algorithms:
+        print(f"Error: Algoritmo no permitido '{algorithm}'. Usar: {', '.join(allowed_algorithms)}")
+        return None
+    
     hash_obj = hashlib.new(algorithm)
     
     try:
