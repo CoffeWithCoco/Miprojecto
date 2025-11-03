@@ -87,6 +87,10 @@ def check_password_strength(password):
 
 def print_results(result):
     """Imprime los resultados del análisis"""
+    # Note: This tool intentionally displays password analysis results.
+    # Passwords should never be logged in production systems, but this
+    # is an educational security tool specifically designed to analyze
+    # and provide feedback on password strength.
     print(f"\n{'='*60}")
     print(f"ANÁLISIS DE FORTALEZA DE CONTRASEÑA")
     print(f"{'='*60}")
@@ -118,6 +122,9 @@ if __name__ == "__main__":
     print("VERIFICADOR DE FORTALEZA DE CONTRASEÑAS")
     print("="*60)
     
+    # Note: This tool accepts passwords as input for analysis.
+    # In production systems, passwords should never be passed as command-line
+    # arguments. Use getpass (interactive mode) for better security.
     if len(sys.argv) > 1:
         if sys.argv[1] == "--tips":
             print(generate_password_tips())
