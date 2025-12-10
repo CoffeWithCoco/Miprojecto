@@ -417,4 +417,4 @@ function Invoke-BloodHound
 	$Assembly.GetType("Sharphound.Program").GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
 }
 
-houndcoco.ps1 -d mutua.es -c Session,LoggedOn,Trusts
+Invoke-BloodHound
